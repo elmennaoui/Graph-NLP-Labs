@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-############## Task 1
 
 ##################
 G = nx.read_edgelist('../datasets/CA-HepTh.txt',comments='#',delimiter='\t')
@@ -20,7 +19,6 @@ print('number of edges of our graph is ',nb_edges)
 
 
 
-############## Task 2
 
 ##################
 CC = nx.connected_components(G) #get connected components of our graph
@@ -38,7 +36,6 @@ print("edges fraction of the whole graph: ",nb_edges_cc/nb_edges)
 
 
 
-############## Task 3
 # Degree
 degree_sequence = [G.degree(node) for node in G.nodes()]
 
@@ -49,8 +46,6 @@ print('mean degree is ', np.mean(degree_sequence))
 ##################
 
 
-
-############## Task 4
 
 ##################
 
