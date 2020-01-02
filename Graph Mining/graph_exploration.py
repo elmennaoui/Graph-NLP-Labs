@@ -8,19 +8,17 @@ import numpy as np
 
 
 
-##################
 G = nx.read_edgelist('../datasets/CA-HepTh.txt',comments='#',delimiter='\t')
 nb_nodes = G.number_of_nodes()
 nb_edges = G.number_of_edges()
 
 print('number of nodes of our graph is ',nb_nodes)
 print('number of edges of our graph is ',nb_edges)
-##################
 
 
 
 
-##################
+
 CC = nx.connected_components(G) #get connected components of our graph
 nb_CC = nx.number_connected_components(G)
 
@@ -32,22 +30,17 @@ nb_edges_cc = largest_cc.number_of_edges()
 
 print("nodes fraction of the whole graph: ",nb_nodes_cc/nb_nodes)
 print("edges fraction of the whole graph: ",nb_edges_cc/nb_edges)
-##################
 
 
 
 # Degree
 degree_sequence = [G.degree(node) for node in G.nodes()]
 
-##################
 print('maximum degree is ', np.max(degree_sequence))
 print('minimum degree is ', np.min(degree_sequence))
 print('mean degree is ', np.mean(degree_sequence))
-##################
 
 
-
-##################
 
 #Histogram Plots
 
@@ -65,4 +58,3 @@ plt.ylabel("frequency")
 plt.xlabel("degree")
 plt.show()
 
-##################
