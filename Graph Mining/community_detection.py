@@ -37,14 +37,13 @@ def spectral_clustering(G, k):
 
 
 
-##################
 G = nx.read_edgelist("CA-HepTh.txt",comments='#', delimiter='\t')
 GCC = G.subgraph(max(nx.connected_components(G), key=len))
 k = 50
 clustering = spectral_clustering(GCC, k)
 # sanity check
 assert GCC.number_of_nodes() == len(clustering)
-##################
+
 
 
 
@@ -64,11 +63,11 @@ def modularity(G, clustering):
     return modularity
 
 
-##################
+
 randomClustering = dict()
 for node in GCC.nodes():
   randomClustering[node] = randint(0,49)
 	
 print("modularity of spectral clustering is ",modularity(GCC,clustering))
 print("modularity of random clustering is",modularity(GCC,randomClustering))
-##################
+
